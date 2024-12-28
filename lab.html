@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 5.2.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.css" />
+
+
+    <title>New Dashboard</title>
+
+</head>
+
+<body style="background-color: #F1F1FA;">
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link" id="overviewLink">Overview</a>
+            </li>
+            <li class="nav-item">
+                <a href="bill.html" class="nav-link" id="billLink">Bill Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="patient.html" class="nav-link" id="patientLink">Patient Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="pharmacy.html" class="nav-link" id="pharmacyLink">Pharmacy Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="lab.html" class="nav-link" id="labLink">Lab Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="visit.html" class="nav-link" id="visitLink">Visit Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="favourite.html" class="nav-link" id="faouriteLink">Favourites</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="">
+        <div class="bill-info-wrapper">
+            <div class="" style="display: flex;flex-direction: row;justify-content:flex-end;align-items: center;">
+                <div class="dropup">
+
+                </div>
+                <div class="dropdown" style="display: flex;flex-direction: row;justify-content:flex-end;">
+                    <button class="dropdown-toggle" id="toggleVisibilityDropdown">Select Boxes</button>
+                    <div class="dropdown-menu" id="visibilityOptions">
+                        <label><input type="checkbox" value="labstatuswise">Status wise</label>
+                        <label><input type="checkbox" value="labcategorywise">Category wise</label>
+                        <label><input type="checkbox" value="lab_department_chart">Department wise</label>
+                        <label><input type="checkbox" value="labcreditwise">Credit Wise</label>
+                        <label><input type="checkbox" value="labmarketingchart">Marketing agent wise</label>
+                        <label><input type="checkbox" value="labtestwise">Test wise</label>
+                        <label><input type="checkbox" value="labconsultantwise">Conslutant wise</label>
+
+                        <button id="saveVisibility" class=" save-btn">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 card" id="labstatuswise">
+                    <div class="chart-box">
+                        <div class="single-box-wrap">
+                            <div class="">
+                                <h3 class="box-title-bill-info">Status wise</h3>
+                            </div>
+                            <div class="">
+                                <select class="chart-dropdown" data-chart="statuscharts">
+                                    <option value="donut">Donut Chart</option>
+                                    <option value="pie">Pie Chart</option>
+                                    <option value="bar">Bar Chart</option>
+                                    <option value="line">Line Chart</option>
+                                </select>
+                                <i class="favourite-icon" data-id="labstatuswise"></i>
+                            </div>
+                        </div>
+                        <div class="Title">
+                            <h5 class="" id="statusTitle">
+
+                            </h5>
+                        </div>
+                        <div id="statuscharts"></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 card" id="labcategorywise">
+                    <div class="chart-box">
+                        <div class="single-box-wrap">
+                            <div class="">
+                                <h3 class="box-title-bill-info">Category wise</h3>
+                            </div>
+                            <div class="">
+                                <select class="chart-dropdown" data-chart="categorychart">
+                                    <option value="donut">Donut Chart</option>
+                                    <option value="pie">Pie Chart</option>
+                                    <option value="bar">Bar Chart</option>
+                                    <option value="line">Line Chart</option>
+                                </select>
+                                <i class="favourite-icon" data-id="labcategorywise"></i>
+                            </div>
+                        </div>
+                        <div class="Title">
+                            <h5 class="" id="categoryTitle">
+
+                            </h5>
+                        </div>
+                        <div id="categorychart"></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 card" id="lab_department_chart">
+                    <div class="chart-box">
+                        <div class="single-box-wrap">
+                            <div class="">
+                                <h3 class="box-title-bill-info">Department wise</h3>
+                            </div>
+                            <div class="">
+                                <select class="chart-dropdown" data-chart="labdepartmentdonutChart">
+                                    <option value="donut">Donut Chart</option>
+                                    <option value="pie">Pie Chart</option>
+                                    <option value="bar">Bar Chart</option>
+                                    <option value="line">Line Chart</option>
+                                </select>
+                                <i class="favourite-icon" data-id="lab_department_chart"></i>
+                            </div>
+                        </div>
+                        <div class="Title">
+                            <h5 class="" id="labdepartmentTitle">
+
+                            </h5>
+                        </div>
+                        <div id="labdepartmentdonutChart"></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 card" id="labcreditwise">
+                    <div class="chart-box">
+                        <div class="single-box-wrap">
+                            <div class="">
+                                <h3 class="box-title-bill-info">Credit wise</h3>
+                            </div>
+                            <div class="">
+                                <select class="chart-dropdown" data-chart="labcreditcharts">
+                                    <option value="donut">Donut Chart</option>
+                                    <option value="pie">Pie Chart</option>
+                                    <option value="bar">Bar Chart</option>
+                                    <option value="line">Line Chart</option>
+                                </select>
+                                <i class="favourite-icon" data-id="labcreditwise"></i>
+                            </div>
+                        </div>
+                        <div class="Title">
+                            <h5 class="" id="labcreditTitle">
+
+                            </h5>
+                        </div>
+                        <div id="labcreditcharts"></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 card" id="labmarketingchart">
+                    <div class="box-category-title-heart">
+                        <h3 class="box-title-bill-info">Marketing agent wise</h3>
+                        <i class="favourite-icon" data-id="labmarketingchart"></i>
+                    </div>
+
+                    <div id="nodatafound">
+                        <img src="assets/images/no_data_found.png" width="200px" height="200px" class="img-fluid" alt="no data found">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 card table-format" id="labtestwise">
+                    <div class="box-category-title-heart">
+                        <h3 class="box-title-bill-info">Test wise</h3>
+                        <i class="favourite-icon" data-id="labtestwise"></i>
+                    </div>
+
+                    <div id="labtesttable">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Test wise</th>
+                                    <th class="ar">Total: <span class="tot-cons">220</span></th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="invname-tbody">
+                                <tr class="invname-row" data-ref="COMPLETE BLOOD COUNT - CBC">
+                                    <td>COMPLETE BLOOD COUNT - CBC</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr class="invname-row" data-ref="Random Plasma Glucose">
+                                    <td>Random Plasma Glucose</td>
+                                    <td>33</td>
+                                </tr>
+                                <tr class="invname-row" data-ref="PP Plasma Glucose (Post Prandial)">
+                                    <td>PP Plasma Glucose (Post Prandial)</td>
+                                    <td>11</td>
+                                </tr>
+                                <tr class="invname-row" data-ref="THYROID STIMULATING HORMONES - TSH">
+                                    <td>THYROID STIMULATING HORMONES - TSH</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr class="invname-row" data-ref="ELECTROLYTES">
+                                    <td>ELECTROLYTES</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr class="invname-row" data-ref="DR.P.RAGUPATHI  CARDIOLOGIST">
+                                    <td>DR.P.RAGUPATHI CARDIOLOGIST</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr class="invname-row" data-ref="URINE COMPLETE ANALYSIS">
+                                    <td>URINE COMPLETE ANALYSIS</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr class="invname-row" data-ref="RBS - PRE DINNER">
+                                    <td>RBS - PRE DINNER</td>
+                                    <td>12</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 card table-format" id="labconsultantwise">
+                    <div class="box-category-title-heart">
+                        <h3 class="box-title-bill-info">Consultant wise</h3>
+                        <i class="favourite-icon" data-id="labconsultantwise"></i>
+                    </div>
+
+                    <div id="labconsultanttable">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Consultant</th>
+                                    <th class="ar">Total: <span class="tot-cons">134004.00</span></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Consultant">Dr. K.Arul MD (Int.Med) (Regi No 57527) (Consultant Critical Care Specialist Diabetologist General Physician)(General Physician)</td>
+                                    <td data-label="Total">₹ 111832.00</td>
+
+                                </tr>
+                                <tr>
+                                    <td data-label="Consultant">Dr. R.Nallichandra .,MD.,(Regi No - 57509) (Consultant Gynaecologist and Obstetrician)(Gynecologist and Obstetrician)</td>
+                                    <td data-label="Total">₹ 18893.00</td>
+
+                                </tr>
+                                <tr>
+                                    <td data-label="Consultant">Dr. R.Nallichandra .,MD.,(Regi No - 57509) (Consultant Gynaecologist and Obstetrician)</td>
+                                    <td data-label="Total">₹ 1967.00</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js"></script>
+
+    <script>
+        // Initialize charts with the default type 'donut'
+        const chartConfigs = {
+            statuscharts: {
+                data: {
+                    columns: [
+                        ['Printed', 120],
+                        ['Completed', 60],
+                        ['Bill paid', 50],
+                        ['Sample taken', 10],
+                    ],
+                    type: 'donut',
+                    colors: {
+                        'Printed': '#C6D68F',
+                        'Completed': '#9BBFE0',
+                        'Bill paid': '#E8A09A',
+                        'Sample taken': '#E1B8E7',
+                    },
+                    labels: {
+                        format: function(v) {
+                                return v.toLocaleString();
+                            } // Format numbers
+                    },
+                    onmouseover: function(d) {
+                        // Update title on hover
+                        document.getElementById('statusTitle').innerText = `${d.name}: ${d.value}%`;
+                    },
+                    onmouseout: function() {
+                        // Reset title on mouse out
+                        document.getElementById('statusTitle').innerText = '';
+                    }
+                },
+                bindto: '#statuscharts',
+                axis: {
+                    x: {
+                        type: 'category',
+                        categories: ['0'], // Modern label
+                        tick: {
+                            centered: true,
+                            multiline: false,
+                        },
+                        padding: {
+                            left: 0.3,
+                            right: 0.3
+                        }
+                    },
+                    y: {
+                        show: false, // Disable Y-axis entirely for a modern look
+                    }
+                },
+                bar: {
+                    width: {
+                        ratio: 0.8 // Adjust bar width for a sleeker appearance
+                    }
+                },
+                grid: {
+                    y: {
+                        show: false // Disable grid lines for a clean look
+                    }
+                },
+                tooltip: {
+                    grouped: false // Modern independent tooltips for bars
+                }
+            },
+            categorychart: {
+                data: {
+                    columns: [
+                        ['Laboratory', 30],
+                        ['Cardiology', 10],
+                        ['Pathology', 25],
+                        ['Radiology', 35],
+                    ],
+                    type: 'donut',
+                    colors: {
+                        'Laboratory': '#B893C3',
+                        'Cardiology': '#E9C2A1',
+                        'Pathology': '#7B5A50',
+                        'Radiology': '#CED24D'
+                    },
+                    labels: {
+                        format: function(v) {
+                                return v.toLocaleString();
+                            } // Format numbers
+                    },
+                    onmouseover: function(d) {
+                        // Update title on hover
+                        document.getElementById('categoryTitle').innerText = `${d.name}: ${d.value}%`;
+                    },
+                    onmouseout: function() {
+                        // Reset title on mouse out
+                        document.getElementById('categoryTitle').innerText = '';
+                    }
+                },
+                bindto: '#categorychart',
+                axis: {
+                    x: {
+                        type: 'category',
+                        categories: ['0'], // Modern label
+                        tick: {
+                            centered: true,
+                            multiline: false,
+                        },
+                        padding: {
+                            left: 0.3,
+                            right: 0.3
+                        }
+                    },
+                    y: {
+                        show: false, // Disable Y-axis entirely for a modern look
+                    }
+                },
+                bar: {
+                    width: {
+                        ratio: 0.8 // Adjust bar width for a sleeker appearance
+                    }
+                },
+                grid: {
+                    y: {
+                        show: false // Disable grid lines for a clean look
+                    }
+                },
+                tooltip: {
+                    grouped: false // Modern independent tooltips for bars
+                }
+            },
+            labdepartmentdonutChart: {
+                data: {
+                    columns: [
+                        ['Biochemistry', 20],
+                        ['Hemotolgy', 20],
+                        ['Clinical Pathology', 35],
+                        ['Serelogy', 25],
+                        ['Immunology', 25]
+                    ],
+                    type: 'donut',
+                    colors: {
+                        'Biochemistry': '#6EC9F5',
+                        'Hemotology': '#6EC9F5',
+                        'Clinical pathology': '#F9A7AC',
+                        'Serology': '#DBDF93',
+                        'Immunology': '#9BBFE0'
+                    },
+                    labels: {
+                        format: function(v) {
+                                return v.toLocaleString();
+                            } // Format numbers
+                    },
+                    onmouseover: function(d) {
+                        // Update title on hover
+                        document.getElementById('labdepartmentTitle').innerText = `${d.name}: ${d.value}%`;
+                    },
+                    onmouseout: function() {
+                        // Reset title on mouse out
+                        document.getElementById('labdepartmentTitle').innerText = '';
+                    }
+                },
+                bindto: '#labdepartmentdonutChart',
+                axis: {
+                    x: {
+                        type: 'category',
+                        categories: ['0'], // Modern label
+                        tick: {
+                            centered: true,
+                            multiline: false,
+                        },
+                        padding: {
+                            left: 0.3,
+                            right: 0.3
+                        }
+                    },
+                    y: {
+                        show: false, // Disable Y-axis entirely for a modern look
+                    }
+                },
+                bar: {
+                    width: {
+                        ratio: 0.8 // Adjust bar width for a sleeker appearance
+                    }
+                },
+                grid: {
+                    y: {
+                        show: false // Disable grid lines for a clean look
+                    }
+                },
+                tooltip: {
+                    grouped: false // Modern independent tooltips for bars
+                }
+            },
+            labcreditcharts: {
+                data: {
+                    columns: [
+                        ['HOS-ANP', 120],
+                        ['Brindhavan Senior Citizen Foundation', 60],
+                        ['StarHealth', 50],
+
+                    ],
+                    type: 'donut',
+                    colors: {
+                        'HOS-ANP': '#7B5A50',
+                        'Brindhavan Senior Citizen Foundation': '#ff7f0e',
+                        'StarHealth': '#2ca02c',
+                    },
+                    labels: {
+                        format: function(v) {
+                                return v.toLocaleString();
+                            } // Format numbers
+                    },
+                    onmouseover: function(d) {
+                        // Update title on hover
+                        document.getElementById('labcreditTitle').innerText = `${d.name}: ${d.value}%`;
+                    },
+                    onmouseout: function() {
+                        // Reset title on mouse out
+                        document.getElementById('labcreditTitle').innerText = '';
+                    }
+                },
+                bindto: '#labcreditcharts',
+                axis: {
+                    x: {
+                        type: 'category',
+                        categories: ['0'], // Modern label
+                        tick: {
+                            centered: true,
+                            multiline: false,
+                        },
+                        padding: {
+                            left: 0.3,
+                            right: 0.3
+                        }
+                    },
+                    y: {
+                        show: false, // Disable Y-axis entirely for a modern look
+                    }
+                },
+                bar: {
+                    width: {
+                        ratio: 0.8 // Adjust bar width for a sleeker appearance
+                    }
+                },
+                grid: {
+                    y: {
+                        show: false // Disable grid lines for a clean look
+                    }
+                },
+                tooltip: {
+                    grouped: false // Modern independent tooltips for bars
+                }
+            }
+
+        };
+
+        const chartInstances = {};
+
+        // Generate charts
+        Object.keys(chartConfigs).forEach(key => {
+            const chart = c3.generate(chartConfigs[key]);
+
+            // Customize stroke-width for donut charts
+            chart.internal.d3.selectAll('.c3-chart-arc path')
+                .style('stroke', '#fff')
+                .style('stroke-width', '10px');
+
+            chartInstances[key] = chart;
+        });
+
+        // Handle dropdown change
+        document.querySelectorAll('.chart-dropdown').forEach(dropdown => {
+            dropdown.addEventListener('change', function() {
+                const chartKey = this.getAttribute('data-chart');
+                const chartInstance = chartInstances[chartKey];
+
+                if (chartInstance) {
+                    chartInstance.transform(this.value);
+                }
+            });
+        });
+
+        // Add hover effect to show data separately
+        Object.values(chartInstances).forEach(chart => {
+            chart.internal.d3.selectAll('.c3-target')
+                .on('mouseover', function(d) {
+                    chart.focus(d.id);
+                })
+                .on('mouseout', function() {
+                    chart.revert();
+                });
+        });
+
+        // Apply a drop-shadow filter to the graph chart
+        const svg = d3.select('#subdepartmentchart svg');
+        const defs = svg.append('defs');
+
+        const filter = defs.append('filter')
+            .attr('id', 'drop-shadow')
+            .attr('height', '130%');
+
+        filter.append('feGaussianBlur')
+            .attr('in', 'SourceAlpha')
+            .attr('stdDeviation', 3);
+
+        filter.append('feOffset')
+            .attr('dx', 2)
+            .attr('dy', 2)
+            .attr('result', 'offsetblur');
+
+        filter.append('feFlood')
+            .attr('flood-color', '#000')
+            .attr('flood-opacity', 0.2);
+
+        filter.append('feComposite')
+            .attr('in2', 'offsetblur')
+            .attr('operator', 'in');
+
+        const feMerge = filter.append('feMerge');
+        feMerge.append('feMergeNode');
+        feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+        svg.selectAll('.c3-bar').style('filter', 'url(#drop-shadow)');
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="assets/main.js"></script>
+
+</body>
+
+</html>

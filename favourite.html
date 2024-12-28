@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 5.2.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.css" />
+
+
+    <title>New Dashboard</title>
+
+</head>
+<style>
+    .bill-info-wrapper .resp {
+        gap: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start !important;
+    }
+    
+    .no-items {
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-height: 100%;
+        height: 550px;
+    }
+    
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        mix-blend-mode: darken;
+    }
+</style>
+
+<body style="background-color:#F1F1FA;">
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link" id="overviewLink">Overview</a>
+            </li>
+            <li class="nav-item">
+                <a href="bill.html" class="nav-link" id="billLink">Bill Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="patient.html" class="nav-link" id="patientLink">Patient Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="pharmacy.html" class="nav-link" id="pharmacyLink">Pharmacy Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="lab.html" class="nav-link" id="labLink">Lab Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="visit.html" class="nav-link" id="visitLink">Visit Info</a>
+            </li>
+            <li class="nav-item">
+                <a href="favourite.html" class="nav-link" id="faouriteLink">Favourites</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="">
+        <div class="bill-info-wrapper">
+            <div class="row favorite-container"></div>
+        </div>
+    </div>
+    <div class="no-favorites" style="display: none;">
+        <div class="no-items">
+            <img src="assets/images/favourite.jpg" alt="No favorites found" class="dummy-image img-fluid" />
+        </div>
+
+        <!-- <p>No favorites found. Add your favorite items!</p> -->
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="assets/main.js"></script>
+
+</body>
+
+</html>
