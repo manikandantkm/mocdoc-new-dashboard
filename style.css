@@ -1,0 +1,994 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+*,
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 16px;
+    scroll-behavior: auto;
+    overflow-x: hidden !important;
+    background: #F1F1FA;
+}
+
+path {
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto
+}
+
+input {
+    border: 1px dotted;
+    width: 20%;
+    margin-bottom: 5px;
+}
+
+.nav-tabs {
+    margin: 30px 35px;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: -1px;
+    background-color: transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    font-size: 20px;
+}
+
+.nav-item a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+a:active {
+    color: #E16408 !important;
+}
+
+.nav-item:focus,
+.nav-item:hover {
+    color: #E16408 !important;
+}
+
+.nav-tabs .nav-link:hover {
+    border: 1px solid transparent;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #e16408;
+    background-color: #f6f9fc;
+}
+
+.single-box-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+select {
+    word-wrap: normal;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    background: transparent;
+}
+
+select.chart-dropdown {
+    outline: none;
+    border: none;
+    /* Optional: remove any visible border */
+}
+
+select.chart-dropdown:focus {
+    outline: none;
+    border: none;
+}
+
+.favourite-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: gray;
+    /* Default color for empty heart */
+}
+
+.favourite-icon::before {
+    content: "♡";
+    /* Unicode for empty heart */
+    font-size: inherit;
+    font-style: normal;
+}
+
+.favourite-icon.active {
+    color: #b5000c;
+    font-style: normal;
+    /* Red color for filled heart */
+}
+
+.favourite-icon.active::before {
+    content: "❤";
+    font-style: normal;
+    /* Unicode for filled heart */
+}
+
+.favourite-icon.beat {
+    transform: scale(1.3);
+}
+
+.box-category-title-heart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-link:hover {
+    background-color: #F1F1FA;
+    color: #E16408;
+}
+
+.nav-link:focus {
+    outline: none;
+    color: #e16408;
+}
+
+.nav-link.active {
+    background-color: #F1F1FA;
+    color: #f16408;
+    border-color: #E16408;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    position: relative;
+    z-index: 10;
+    top: 1px;
+}
+
+.navbar {
+    display: flex;
+    border-bottom: 1px solid #E16408;
+    padding: 20px 0 0;
+}
+
+.navbar ul {
+    display: flex;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 5px;
+}
+
+.navbar ul li a {
+    font-size: 18px;
+}
+
+.nav-link {
+    font-size: 18px;
+}
+
+.overview-wrap {
+    margin-bottom: 30px;
+}
+
+
+/* Style for dropdown options */
+
+#visibilityOptions input[type="checkbox"]+label {
+    display: block;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#visibilityOptions input[type="checkbox"]+label:hover {
+    background-color: #e16408;
+    /* Your brand color */
+    color: white;
+    /* Optional: Change text color for contrast */
+}
+
+.dropdown {
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    padding-right: 41px;
+    margin-top: 30px;
+}
+
+.dropdown-toggle {
+    white-space: nowrap;
+    padding: 12px;
+    width: 280px;
+    border: 1px solid #d3d3d3;
+    background-color: transparent;
+    position: relative;
+}
+
+.dropup {
+    width: 100%;
+    height: 50px;
+}
+
+.dropdown-toggle {
+    white-space: nowrap;
+    padding: 12px;
+    width: 280px;
+    border: 1px solid transparent;
+    font-size: 18px;
+    background-color: #Fff;
+    position: relative;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.dropdown-menu label {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 16px;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+.save-btn {
+    width: 100%;
+    color: #fff;
+    background: #e16408;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 59%;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    z-index: 10;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+@media (min-width:1400px) and (max-width:1500px) {
+    .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 93%;
+        left: 56%;
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        z-index: 10;
+        width: 280px;
+        box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    }
+}
+
+.c3-legend-item {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* Center the legend container */
+
+.c3-legend {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Center the chart SVG */
+
+.c3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Keep legends below the chart */
+}
+
+
+/*  */
+
+#chartContainer {
+    position: relative;
+    text-align: center;
+}
+
+#chartMiddleLabel {
+    position: absolute;
+    top: 0%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+#legendTitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#segmentTitle,
+#creditTitle,
+#subdepartmentTitle,
+#departmentTitle,
+#paymentTitle,
+#donutTitle,
+#chartsTitle,
+#topmedicineTitle,
+#pharmacypatientTitle,
+#pharmacyconsultantTitle,
+#pharmacymanufactureTitle,
+#genderTitle,
+#ageTitle,
+#patientsubdepartmentTitle,
+#statusTitle,
+#categoryTitle,
+#labdepartmentTitle,
+#labcreditTitle,
+#newoldTitle,
+#visitTitle,
+#treatmentTitle,
+#appointmentTitle,
+#roomstatsTitle,
+#newoldipTitle,
+#pharmacycategoryTitle {
+    width: 130px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 50px;
+    color: #000;
+    text-align: left;
+}
+
+.Title {
+    height: 30px;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.bill-info-wrapper .card,
+.favorite-container .card {
+    border: none;
+    background-color: #fff;
+    box-shadow: none;
+    max-width: 400px;
+    padding: 15px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    border-radius: 10px;
+    height: 430px;
+}
+
+.favorite-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.bill-info-wrapper .row {
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box-title-bill-info {
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0;
+}
+
+
+/*  */
+
+#charts {
+    max-width: 500px;
+    margin: auto;
+}
+
+.c3-bar {
+    stroke-width: 2px;
+}
+
+.c3-axis-x text {
+    font-size: 12px;
+    font-weight: bold;
+    fill: #333;
+}
+
+.c3-axis-y text {
+    font-size: 12px;
+    fill: #666;
+}
+
+.c3-chart-bar .c3-shapes {
+    stroke-width: 6px;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+
+/* payment */
+
+.c3-chart-arcs .c3-arc {
+    stroke: #fff;
+    /* White stroke to separate slices */
+    stroke-width: 6px;
+    /* Set stroke width */
+}
+
+svg {
+    width: 350px !important;
+    height: 350px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#paymentchart .c3-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* .c3-chart-arcs-title {
+    font-size: 20px;
+    font-weight: 600;
+    fill: #000;
+} */
+
+.bill-info-wrapper .c3-legend-item {
+    font-size: 14px !important;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+/*  */
+
+#departmentchart .c3-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#departmentchart svg {
+    width: 350px !important;
+    height: 350px !important;
+}
+
+
+/* subdepartment wise */
+
+#subdepartmentcharts {
+    max-width: 500px;
+    margin: auto;
+}
+
+.c3-bar {
+    stroke-width: 2px;
+}
+
+.c3-axis-x text {
+    font-size: 12px;
+    font-weight: bold;
+    fill: #333;
+}
+
+.c3-axis-y text {
+    font-size: 12px;
+    fill: #666;
+}
+
+.c3-chart-bar .c3-shapes {
+    stroke-width: 6px;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+
+/* credit wise */
+
+#creditchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+/* marketing */
+
+#nodatafound {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* table */
+
+
+/*********************************
+        DEFAULT SETTING
+**********************************/
+
+
+/*********************************
+        DEFAULT COLORS
+**********************************/
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --gray: #2b3c56;
+    --lite: #f1f1f1;
+    --dark: #e16408;
+    --yellow: #f5b409;
+    --red: #f33e5d;
+    --green: #9bd846;
+    --blue: #029ef6;
+    --orange: #ee712f;
+    --pink: #ef5890;
+    --primary: #5487fa;
+    --primary_dark: ;
+    --primary_lite: #e4ecfe;
+    --secondary: ;
+    --secondary_dark: ;
+    --secondary_lite: ;
+}
+
+
+/*********************************
+      CUSTOM SCROLL BAR
+**********************************/
+
+::-webkit-scrollbar {
+    height: 0px;
+    width: 2px;
+    background: #e16408;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--white);
+}
+
+
+/* ::-webkit-scrollbar-corner {
+    background: #e16408;
+} */
+
+
+/* a {
+    text-decoration: none !important;
+    min-width: fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+} */
+
+.padding_1 {
+    padding: 1rem;
+}
+
+.padding_2 {
+    padding: 2rem;
+}
+
+.padding_3 {
+    padding: 3rem;
+}
+
+.padding_4 {
+    padding: 4rem;
+}
+
+.relative {
+    position: relative;
+}
+
+
+/*********************************
+         MEDIA QUERY
+**********************************/
+
+@media (max-width:720px) {
+    .flex {
+        flex-wrap: wrap;
+    }
+    .padding_1,
+    .padding_2,
+    .padding_3,
+    .padding_4 {
+        padding: 1rem;
+    }
+    a {
+        font-size: 12px;
+    }
+}
+
+
+/*SMALL SCREEN*/
+
+@media (max-width:300px) {
+    .padding_1,
+    .padding_2,
+    .padding_3,
+    .padding_4 {
+        padding: 0.5rem;
+    }
+    a {
+        font-size: 10px;
+    }
+}
+
+
+/*********************************
+            MAIN
+**********************************/
+
+.table-format table {
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--white);
+    border-radius: 10px;
+    position: relative;
+    border-collapse: collapse;
+    z-index: 1;
+    color: var(--gray);
+    height: 330px;
+}
+
+.table-format {
+    height: 410px;
+    overflow: scroll;
+}
+
+.table-format tbody tr:not(:last-child) {
+    border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+}
+
+.table-format th,
+.table-format td {
+    padding: 0.5rem;
+    gap: 5px;
+    position: relative;
+    cursor: default;
+}
+
+.table-format td:last-child:hover a {
+    color: var(--black);
+}
+
+.table-format thead {
+    background-color: var(--primary_lite);
+}
+
+.table-format th {
+    text-transform: uppercase;
+}
+
+.table-format td img {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.table-format tr td:last-child,
+.table-format tr td:nth-last-child(2),
+.table-format tr td:nth-last-child(3),
+.table-format tr td:nth-last-child(4),
+.table-format tr td:nth-last-child(6),
+.table-format tr td:nth-last-child(7),
+.table-format tr td:nth-last-child(8),
+.table-format tr td:nth-last-child(9) {
+    text-align: left;
+}
+
+.table-format tr:hover {
+    background-color: #f9f9f9;
+}
+
+.table-format table a {
+    color: var(--gray);
+}
+
+
+/*ICONS*/
+
+.fa-arrow-up {
+    color: var(--green);
+}
+
+.fa-arrow-down {
+    color: var(--red);
+}
+
+.fa-mars {
+    color: var(--blue);
+}
+
+.fa-venus {
+    color: var(--pink);
+}
+
+
+/* .active {
+    background-color: #eef2fe;
+    color: var(--primary);
+}
+
+.inactive {
+    background-color: #fff0ee;
+    color: var(--red);
+} */
+
+
+/*PROGRESS BAR*/
+
+.progress {
+    display: inline-block;
+    background-color: var(--lite);
+    border-radius: 40px;
+    width: 60px;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress em {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 10px;
+    background-color: var(--primary);
+}
+
+@media (max-width:720px) {
+    .table-format table {
+        background-color: transparent;
+    }
+    .table-format table thead {
+        display: none;
+    }
+    .table-format table td {
+        width: 100%;
+        display: block;
+        text-align: right;
+    }
+    .table-format table td:not(:last-child) {
+        border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+    }
+    .table-format table td:before {
+        content: attr(data-label);
+        z-index: 1;
+        float: left;
+        color: var(--black);
+    }
+    .table-format tr {
+        background-color: var(--white);
+        border-radius: 5px;
+        display: block;
+        margin: 0.5rem 0;
+    }
+    .table-format tbody tr {
+        border-bottom: none;
+    }
+    .table-format tr td {
+        text-align: right !important;
+    }
+    .table-format td:last-child:hover:after {
+        left: auto;
+        right: 10%;
+        transform: translate(50%, 50%);
+    }
+    .table-format th,
+    .table-format td {
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+/* gender chart */
+
+#genderchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+/* age chart */
+
+#agechart .c3-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#agechart svg {
+    width: 350px !important;
+    height: 350px !important;
+}
+
+
+/* arer wise */
+
+#areawisecharts {
+    max-width: 500px;
+    margin: auto;
+}
+
+
+/* category chart */
+
+#categorychart .c3-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* lab_department_chart */
+
+#lab_department_chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+/* pharmacypatientchart */
+
+#pharmacypatientchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#pharmacypatienttype {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 185px;
+    color: #000;
+}
+
+.c3 text {
+    font-family: 'SF Pro Display' !important;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 80px;
+    font-size: 17px;
+}
+
+
+/* labchart */
+
+#labdepartmentdonutChart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#labchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.c3-title {
+    font-weight: bold !important;
+    font-family: 'SF Pro Display' !important;
+    font-size: 18px !important;
+}
+
+.visit .card {
+    overflow: hidden;
+}
+
+.phar-con {
+    overflow: hidden;
+}
+
+
+/* overview */
+
+.overview-heading {
+    font-size: 25px;
+    color: #000;
+    font-weight: 600;
+}
+
+.overview-section .box-title-bill-info {
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.overview-section .bill-info-wrapper .card {
+    border: none;
+    background-color: #fff;
+    box-shadow: none;
+    max-width: 250px;
+    padding: 15px;
+    margin-top: 10px;
+    max-height: 410px;
+    height: max-content;
+    margin: 0px 10px;
+    width: 240px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.over-view-main-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
